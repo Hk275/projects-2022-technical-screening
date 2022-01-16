@@ -32,8 +32,46 @@ var assert = require("assert")
 
 const altNumbers = (numArray) => {
     // TODO: COMPLETE THIS FUNCTION
-    return [];
+    let total = numArray.length
+    let pArray = []
+    let nArray = []
+    let output = []
+    for (let i = 0; i < total; i++) {
+      if (numArray[i] >= 0) {
+        pArray.push(numArray[i])
+      } else {
+        nArray.push(numArray[i])
+      }
+    }
+    // if lenght not equal arrange with greatest starting first 
+    // if same just put positve first 
+    if (nArray.length > pArray.length) {
+      
+      let b = mg(nArray,pArray)
+      output.push(b)
+      console.log(b)
+   
+    } else {
+      let b = mg(pArray,nArray)
+      output.push(b)
+      console.log(b)
+    }
+
+    return output;
 }
+
+const mg = (ar1, ar2) => {
+  const mix = [];
+  for(let i = 0; i < ar1.length + ar2.length; i++){
+     if(i % 2 === 0){
+        mix.push(ar1[i/2]);
+     }else{
+        mix.push(ar2[(i-1)/2]);
+     };
+  };
+  return mix;
+};
+
 
 module.exports = { altNumbers } // Do not modify this line
 
