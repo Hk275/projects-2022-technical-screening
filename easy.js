@@ -50,14 +50,16 @@ const altNumbers = (numArray) => {
       let b = mg(nArray,pArray)
       output.push(b)
       console.log(b)
+      return b;
    
     } else {
       let b = mg(pArray,nArray)
       output.push(b)
       console.log(b)
+      return b;
     }
 
-    return output;
+    
 }
 
 const mg = (ar1, ar2) => {
